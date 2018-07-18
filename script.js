@@ -17,7 +17,7 @@ class StopWatch {
 	pad0(value){
 		let result = value.toString();
 		const resultLength = result.length;
-		if (resultLength <2){
+		if (resultLength < 2){
 			result = 0 + result;
 		}
 		return result;
@@ -78,7 +78,7 @@ class StopWatch {
 		this.print();
 	}
 	
-	}*/
+	}
 	clearResults() {
 		const parentUl = document.querySelector('.results');
 		while (parentUl.firstChild) {
@@ -86,8 +86,6 @@ class StopWatch {
 		}
 	}
 }
-
-//create instance of stopWatch class
 
 const stopWatch = new StopWatch(document.querySelector('.stopwatch'));
 
@@ -104,4 +102,3 @@ clearButton.addEventListener('click', () => stopWatch.clearWatch());
 
 let clearResultButton = document.getElementById('clear-results');
 clearResultButton.addEventListener('click', () => stopWatch.clearResults());
-
