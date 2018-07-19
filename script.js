@@ -14,14 +14,6 @@ class StopWatch {
 		};
 	}
 	
-	pad0(value){
-		let result = value.toString();
-		const resultLength = result.length;
-		if (resultLength < 2){
-			result = 0 + result;
-		}
-		return result;
-	}
 	
 	print(){
 		this.display.innerText = this.format(this.times);
@@ -32,34 +24,34 @@ class StopWatch {
 	}
 	
 	start(){
-		if(!this.running){
-		this.running = true;
-		this.watch = setInterval(() => this.step(), 10);
+		if (!this.running){
+			this.running = true;
+			this.watch = setInterval(() => this.step(), 10);
 		}
 	}
 	
-	step (){
-		if(!this.running) return;
-		this.calculate();
-		this.print();
+	step(){
+		if (!this.running) return;
+			this.calculate();
+			this.print();
 	}
 	
 	calculate(){
 		this.times.miliseconds += 1;
 		
-		if(this.times.miliseconds >= 100){
+		if (this.times.miliseconds >= 100){
 			this.times.seconds += 1;
 			this.times.miliseconds = 0;
 		}
 		
-		if(this.times.seconds >= 60){
+		if (this.times.seconds >= 60){
 			this.times.minutes += 1;
 			this.times.seconds = 0;
 		}
 	}
 	results(times){
-			let elementLi = document.createElement('li');
-			let resultsEl = document.querySelector('.results');
+			const elementLi = document.createElement('li');
+			const resultsEl = document.querySelector('.results');
 				if(this.times.minutes !== 0 || this.times.seconds !== 0 || this.times.miliseconds !== 0 ){
 					elementLi.innerHTML = `${this.format(this.times)}`;
 					resultsEl.appendChild(elementLi);
@@ -86,6 +78,15 @@ class StopWatch {
 		}
 	}
 }
+
+	function pad0(value){
+		let result = value.toString();
+		const resultLength = result.length;
+		if (resultLength < 2){
+			result = 0 + result;
+		}
+		return result;
+	}
 
 const stopWatch = new StopWatch(document.querySelector('.stopwatch'));
 
