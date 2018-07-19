@@ -1,11 +1,11 @@
-TIMER - modyfied with ES6
+TIMER - modified with ES6
 ====================
 
 Very simple Timer tool that allows users to Stop, Start and Clear the Timer
 
 Basic background
 ---------------------
-Page created with HTML, JavaScript, React library
+Page created with HTML, JavaScript, ES6 library
 
 Requirements
 ---------------------
